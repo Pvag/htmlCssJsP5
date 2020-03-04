@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"
+            integrity="sha256-Pg1di+fBF53Rbh9oZR/FeD1xsFzTLC963lcac1D0ias="
+            crossorigin="anonymous"
+        ></script>
+        <title>Dark/Light Mode</title>
+        <!-- you can have style within the .html file -->
+        <style>
+            button {
+                color: green;
+                margin: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="specialArea" class="light"></div>
+        <div id="theme-switcher">
+            <p>Choose your theme</p>
+            <button onclick="setDark()">Dark</button>
+            <button onclick="setLight()">Light</button>
+        </div>
+
+        <hr />
+
+        <p class="center" id="sketch-intro">my p5 sketch</p>
+        <div id="p5Sketch"></div>
+
+        <script>
+            // here is where I write the JavaScript code
+            const divForSpecialArea = document.getElementById('specialArea');
+            function setDark() {
+                // console.log(theBody.classList);
+                divForSpecialArea.classList.remove('light');
+                divForSpecialArea.classList.add('dark');
+            }
+            function setLight() {
+                divForSpecialArea.classList.remove('dark');
+                divForSpecialArea.classList.add('light');
+            }
+        </script>
+        <script src="./p5Sketch.js"></script>
+        <!-- either use the previous or the following script -->
+        <!-- <script>
+            function setup() {
+                const canv = createCanvas(400, 200);
+                canv.parent('p5Sketch');
+                background(0, 100, 200);
+            }
+
+            function draw() {
+                circle(mouseX, mouseY, 30);
+            }
+        </script> -->
+    </body>
+</html>
